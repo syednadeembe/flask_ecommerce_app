@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+    <p>{{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+    <form action="{{ url_for('order', product_id=product.id) }}" method="post">
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" min="1" required>
+        <button type="submit">Order</button>
+    </form>
+</body>
+</html>
